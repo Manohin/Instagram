@@ -13,6 +13,8 @@ class StoriesItemCell: UICollectionViewCell {
     func configure(with info: FeedStoriesItemCellInfo) {
         imageView.image = info.image
         userNameLabel.text = info.userName
+        plusButton.isHidden = !info.isAddButtonVisible
+        circleImageView.isHidden = !info.isNewStory
     }
     
     //MARK: - Init
@@ -33,6 +35,8 @@ class StoriesItemCell: UICollectionViewCell {
         static let labelToCellInset: CGFloat = 6
         static let imageToLabelOffset: CGFloat = 6
         static let userNameFontSize: CGFloat = 12
+        static let plusButtonSize: CGFloat = 20
+        static let circleSize: CGFloat = 72
     }
     
     
@@ -53,6 +57,17 @@ class StoriesItemCell: UICollectionViewCell {
         return label
     }()
     
+    private let plusButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "addStoryButton"), for: .normal)
+        return button
+    }()
+    
+    private let circleImageView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "StoryRing")
+        return view
+    }()
 }
 
 //MARK: - Private methods
@@ -68,6 +83,16 @@ private extension StoriesItemCell {
         userNameLabel.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(UIConstants.labelToCellInset)
             make.top.equalTo(imageView.snp.bottom).offset(UIConstants.imageToLabelOffset)
+        }
+        contentView.addSubview(plusButton)
+        plusButton.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(imageView)
+            make.size.equalTo(UIConstants.plusButtonSize)
+        }
+        contentView.addSubview(circleImageView)
+        circleImageView.snp.makeConstraints { make in
+            make.center.equalTo(imageView)
+            make.size.equalTo(UIConstants.circleSize)
         }
     }
 }
