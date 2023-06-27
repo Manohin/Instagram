@@ -17,15 +17,14 @@ class FeedStoriesSetCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-initialize()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//MARK: - Private constants
-    
+    //MARK: - Private constants
     private enum UIConstants {
         static let collectionViewHeight: CGFloat = 106
         static let cellWidth: CGFloat = 72
@@ -37,9 +36,7 @@ initialize()
     private  var items: FeedStoriesSellInfo = []
 }
 
-
 //MARK: - Private methods
-
 private extension FeedStoriesSetCell {
     func initialize() {
         let layout = UICollectionViewFlowLayout()
@@ -70,7 +67,6 @@ extension FeedStoriesSetCell: UICollectionViewDataSource {
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
-
 extension FeedStoriesSetCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: UIConstants.cellWidth, height: UIConstants.cellHeight)

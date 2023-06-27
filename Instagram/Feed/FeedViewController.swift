@@ -21,18 +21,23 @@ class FeedViewController: UIViewController {
     private let tableView = UITableView()
     private var items:  [FeedItemType] = [
         .stories([
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: true, isNewStory: false),
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: false, isNewStory: true),
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: false, isNewStory: false),
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: false, isNewStory: false),
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: false, isNewStory: true),
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: false, isNewStory: true),
-            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "User123", isAddButtonVisible: false, isNewStory: false)
+            FeedStoriesItemCellInfo(image: UIImage(named: "alina")!, userName: "Alina", isAddButtonVisible: true, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "katya")!, userName: "Kate", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "alexey")!, userName: "Alexey", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "irina3")!, userName: "Irina", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "Sobaken", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "Sobaken", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "dog")!, userName: "Sobaken", isAddButtonVisible: false, isNewStory: false)
         ]),
-        .post(FeedPostItemInfo(userImage: UIImage(named: "dog")!, userName: "Sobaken", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 10, comment: CommentShortInfo(userName: "Another_Dog", commentText: "Wow! you are a good boy)))")))
-        
-    ]
-    
+        .post(FeedPostItemInfo(userImage: UIImage(named: "alina")!, userName: "Alina", postSubtitle: "Sponsored", postImage: UIImage(named: "alina")!, numberOfLikes: 2355, comment: CommentShortInfo(userName: "userName", commentText: "🔥🔥🔥"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "alina")!, userName: "Alina", postSubtitle: "Belgorod", postImage: UIImage(named: "alina2")!, numberOfLikes: 3324, comment: CommentShortInfo(userName: "some_people", commentText: "Крутая фотка! Алина - красотка!"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "alina")!, userName: "Alina", postSubtitle: "Belgorod", postImage: UIImage(named: "alina3")!, numberOfLikes: 5313, comment: CommentShortInfo(userName: "user2432", commentText: "Вау! Крутяк!!!"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "alina")!, userName: "Alina", postSubtitle: "Belgorod", postImage: UIImage(named: "alina4")!, numberOfLikes: 4325, comment: CommentShortInfo(userName: "user324", commentText: "Это же Питница?"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "dog")!, userName: "Sobaken", postSubtitle: "Some place", postImage: UIImage(named: "dog")!, numberOfLikes: 1234, comment: CommentShortInfo(userName: "Some_dog", commentText: "Хороший мальчик!)))"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "dog")!, userName: "Sobaken", postSubtitle: "Some place", postImage: UIImage(named: "dog")!, numberOfLikes: 1234, comment: CommentShortInfo(userName: "Some_dog", commentText: "Хороший мальчик!)))"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "dog")!, userName: "Sobaken", postSubtitle: "Some place", postImage: UIImage(named: "dog")!, numberOfLikes: 1234, comment: CommentShortInfo(userName: "Some_dog", commentText: "Хороший мальчик!)))"))),
+        .post(FeedPostItemInfo(userImage: UIImage(named: "dog")!, userName: "Sobaken", postSubtitle: "Some place", postImage: UIImage(named: "dog")!, numberOfLikes: 1234, comment: CommentShortInfo(userName: "Some_dog", commentText: "Хороший мальчик!)))")))
+        ]
 }
 
 // MARK: - Private Methods
@@ -85,7 +90,6 @@ private extension FeedViewController {
         }
         return UIMenu(title: "", children: [subsItem, favsItem])
     }
-    
 }
 
 extension FeedViewController: UITableViewDataSource {

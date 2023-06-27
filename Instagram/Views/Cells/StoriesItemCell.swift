@@ -9,6 +9,7 @@ import SnapKit
 import UIKit
 
 class StoriesItemCell: UICollectionViewCell {
+    
     //MARK: - Public
     func configure(with info: FeedStoriesItemCellInfo) {
         imageView.image = info.image
@@ -18,7 +19,6 @@ class StoriesItemCell: UICollectionViewCell {
     }
     
     //MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -39,9 +39,7 @@ class StoriesItemCell: UICollectionViewCell {
         static let circleSize: CGFloat = 72
     }
     
-    
     //MARK: - Private properties
-    
     private let imageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = UIConstants.imageSize / 2
@@ -71,7 +69,6 @@ class StoriesItemCell: UICollectionViewCell {
 }
 
 //MARK: - Private methods
-
 private extension StoriesItemCell {
     func initialize() {
         contentView.addSubview(imageView)
