@@ -49,6 +49,7 @@ private extension FeedViewController {
         navigationItem.rightBarButtonItems = makeRightBarButtonItems()
         tableView.dataSource = self
         tableView.separatorColor = .clear
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(FeedPostCell.self, forCellReuseIdentifier: String(describing: FeedPostCell.self))
         tableView.register(FeedStoriesSetCell.self, forCellReuseIdentifier: String(describing: FeedStoriesSetCell.self))
         view.addSubview(tableView)
@@ -109,4 +110,9 @@ extension FeedViewController: UITableViewDataSource {
             return cell
         }
     }
+    
+    func randomLikes() -> Int {
+        Int.random(in: 10...5000)
+    }
 }
+

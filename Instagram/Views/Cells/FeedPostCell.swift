@@ -115,6 +115,13 @@ class FeedPostCell: UITableViewCell {
         label.font = .systemFont(ofSize: UIConstants.commentLabelFontSize)
         return label
     }()
+    
+    private let bookmarkButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        return button
+    }()
 }
 
 //MARK: - Private methods
@@ -158,6 +165,14 @@ private extension FeedPostCell {
             make.leading.equalToSuperview().inset(UIConstants.contentInset)
             make.top.equalTo(postImageView.snp.bottom).offset(UIConstants.actionsStackToPostImageOffset)
         }
+        
+        contentView.addSubview(bookmarkButton)
+        bookmarkButton.snp.makeConstraints { make in
+            make.height.equalTo(UIConstants.actionStackHeight)
+            make.trailing.equalToSuperview().inset(UIConstants.contentInset)
+            make.top.equalTo(postImageView.snp.bottom).offset(UIConstants.actionsStackToPostImageOffset)
+        }
+        
         contentView.addSubview(likesLabel)
         likesLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(UIConstants.contentInset)
